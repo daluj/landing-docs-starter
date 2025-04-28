@@ -1,15 +1,11 @@
 # Configuration
-baseURL: "https://docs.helixml.tech/"
+baseURL: "http://localhost:1313/"
 timeout: "2m"
 enableRobotsTXT: true
 enableGitInfo: true
 # enableEmoji: false
 hasCJKLanguage: true
 canonifyURLs: true
-
-services:
-  googleAnalytics:
-    ID: G-85V4E1WPBP
 
 outputs:
   home: [HTML]
@@ -21,12 +17,12 @@ languages:
   en:
     languageName: English
     weight: 1
-    title: Helix Docs
+    title: Docs
 
 module:
   hugoVersion:
     extended: true
-    min: "0.124.0"
+    min: "0.145.0"
   imports:
     - path: github.com/imfing/hextra
   mounts:
@@ -60,24 +56,10 @@ enableInlineShortcodes: true
 
 menu:
   main:
-    - name: Home
-      url: https://tryhelix.ai/
-      weight: 1
-    - name: GitHub
-      weight: 4
-      url: "https://github.com/helixml/docs"
-      params:
-        icon: github
-    - name: Twitter
-      weight: 5
-      url: "https://twitter.com/helixml"
-      params:
-        icon: twitter
     - name: Search
-      weight: 6
+      weight: 1
       params:
         type: search
-
 
 params:
 
@@ -98,11 +80,11 @@ params:
 
   theme:
     # light | dark | system
-    default: dark
-    displayToggle: false
+    default: system
+    displayToggle: true
 
   footer:
-    enable: true
+    enable: false
     displayCopyright: true
     displayPoweredBy: false
     width: normal
@@ -120,30 +102,9 @@ params:
       # index page by: content | summary | heading | title
       index: content
 
-  editURL:
-    enable: true
-    base: "https://github.com/helixml/docs/edit/main/content"
-
   blog:
     list:
       displayTags: true
-
-  comments:
-    enable: false
-    type: giscus
-
-    # https://giscus.app/
-    giscus:
-      repo: imfing/hextra
-      repoId: R_kgDOJ9fJag
-      category: General
-      categoryId: DIC_kwDOJ9fJas4CY7gW
-      # mapping: pathname
-      # strict: 0
-      # reactionsEnabled: 1
-      # emitMetadata: 0
-      # inputPosition: top
-      # lang: en
 
   searchbot:
     urls:

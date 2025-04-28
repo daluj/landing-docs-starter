@@ -14,6 +14,7 @@ const disabledCss = {
 }
 
 module.exports = {
+    prefix: '',
     content: [
         `${themeDir}/hugo_stats.json`,
     ],

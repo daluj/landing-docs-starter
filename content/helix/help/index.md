@@ -1,10 +1,6 @@
 ---
 title: Helix Help and Support
 linkTitle: Help and Support
-menu:
-  main:
-    name: Contact
-    weight: 3
 weight: 99
 tags:
 - help

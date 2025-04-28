@@ -3,10 +3,6 @@ title: Introduction to Helix
 linkTitle: Helix Documentation
 cascade:
   type: docs
-menu:
-  main:
-    name: Helix Docs
-    weight: 2
 next: /helix/getting-started
 weight: 2
 aliases:
