@@ -1,6 +1,6 @@
 {{/* CSS */}}
 {{ $options := dict "inlineImports" true "config" "./assets/css/postcss.config.js" }}
-{{ $styles := resources.Get "css/helix.css" }}
+{{ $styles := resources.Get "css/my-site.css" }}
 {{ $styles = $styles | css.PostCSS $options }}
 {{- if hugo.IsProduction }}
 {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
