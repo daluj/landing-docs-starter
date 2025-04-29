@@ -1,11 +1,11 @@
 <section id="hero" class="py-24 px-6 text-center flex flex-col items-center min-h-[80vh]">
   <!-- Title and Subtitle Centered -->
   <div class="max-w-2xl">
-    <h1 class="text-5xl font-medium mb-6 text-blue-500">
+    <h1 class="text-5xl font-medium mb-6 text-blue-700">
       {{ i18n "hero_title" | default "Feels like your business is drowning in chaos?" }}
     </h1>
     <p class="text-xl mb-8">
-      {{ i18n "hero_subtitle" | default "We transform your business chaos into order. What if you could streamline your operations?" }}
+      {{ i18n "hero_subtitle" | default "It’s frustrating when complexity slows you down. What if together we could turn that into clarity?" }}
     </p>
   </div>
 
@@ -61,7 +61,7 @@
             Sound familiar? You're not alone.
         </h2>
         <p class="mt-4 text-lg">
-            We get it—inefficiency stings. Let's cut through the noise and get you back in control.
+            We get it, inefficiency stings. Let's cut through the noise and get you back in control.
         </p>
       </div>
       <!-- Carousel Section -->
@@ -397,11 +397,84 @@
   </div>
 </section>
 
+<section id="pricing" class="section-generic py-16 px-4">
+  <div class="max-w-7xl mx-auto text-center mb-12">
+    <h2 class="text-4xl font-medium text-blue-700">Pricing That Works for You</h2>
+    <p class="mt-4 text-lg">No pressure. No hidden fees. Just a plan that grows with you.</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+
+    <!-- Hobby Plan -->
+    <div class="relative rounded-2xl shadow-lg transform hover:scale-105 transition p-6">
+      <div class="text-center mb-6">
+        <div class="text-lg font-semibold">Hobby</div>
+        <div class="mt-2 text-4xl font-extrabold">
+          $0<span class="text-base font-medium">/month</span>
+        </div>
+        <div class="mt-1 text-sm">For individual hobbyists</div>
+      </div>
+      <a href="#" class="block text-center border border-blue-500 text-blue-700 font-semibold rounded-lg py-3 hover:bg-blue-700 hover:text-white transition">Get started</a>
+      <ul class="space-y-4 mt-6">
+        <!-- Features... -->
+      </ul>
+    </div>
+
+    <!-- Pro Plan with dynamic price update -->
+    <div x-data="{ editors: 5, pricePerEditor: 30 }" class="relative rounded-2xl shadow-lg transform hover:scale-105 transition p-6">
+      <div class="absolute -mt-4 right-6">
+        <span class="bg-orange-500 text-white uppercase text-xs font-semibold px-3 py-1 rounded-b-full">Popular</span>
+      </div>
+      <div class="text-center mb-6">
+        <div class="text-lg font-semibold">Pro</div>
+        <div class="mt-2 text-4xl font-extrabold">
+          $<span x-text="editors * pricePerEditor"></span><span class="text-base font-medium">/month</span>
+        </div>
+        <div class="mt-1 text-sm">For small teams and startups</div>
+      </div>
+      <a href="#" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg py-3 transition">Try for free</a>
+      <ul class="space-y-4 mt-6">
+        <li class="flex items-center space-x-3">
+          <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+          </svg>
+          <span class="text-sm">Everything in Hobby, plus</span>
+        </li>
+        <li class="flex items-center space-x-3">
+          <select x-model="editors"
+                  class="w-16 text-sm border border-gray-600 rounded focus:outline-none px-2 py-1 appearance-none">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+          </select>
+          <span class="text-sm">editors</span>
+        </li>
+        <!-- Other features... -->
+      </ul>
+      
+    </div>
+
+    <!-- Enterprise Plan -->
+    <div class="relative rounded-2xl shadow-lg transform hover:scale-105 transition p-6">
+      <div class="text-center mb-6">
+        <div class="text-lg font-semibold">Enterprise</div>
+        <div class="mt-2 text-4xl font-extrabold">Custom Pricing</div>
+        <div class="mt-1 text-sm">For large organizations</div>
+      </div>
+      <a href="#" class="block text-center border border-blue-500 text-blue-700 font-semibold rounded-lg py-3 hover:bg-blue-700 hover:text-white transition">Let's Talk</a>
+      <ul class="space-y-4 mt-6">
+        <!-- Features... -->
+      </ul>
+    </div>
+
+  </div>
+</section>
+
 <section id="contact" class="py-20">
   <div class="max-w-3xl mx-auto px-6 text-center">
       <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-blue-700">{{ i18n "cta_heading" | default "Ready to stop guessing and start winning?" }}</h2>
-      <p class="text-xl mt-4 mb-10">{{ i18n "cta_subheading" | default "Schedule a free 30-minute consultation to see if we're a good fit." }}</p>
-      <a href="#" class="inline-block px-8 py-4 bg-orange-700 text-white rounded-lg hover:bg-orange-800 transition-all pulse font-bold" aria-label="Book your free consultation call">{{ i18n "cta_button" | default "Book Your Free 30-Minute Call" }}</a>
+      <p class="text-xl mt-4 mb-10">{{ i18n "cta_subheading" | default "We hear you, it’s overwhelming. How about we figure this out in 15 minutes, no pressure?" }}</p>
+      <a href="#" class="inline-block px-8 py-4 bg-orange-700 text-white rounded-lg hover:bg-orange-800 transition-all pulse font-bold" aria-label="Book your free consultation call">{{ i18n "cta_button" | default "Let's Talk, Free, No Commitment" }}</a>
   </div>
 </section>
  
