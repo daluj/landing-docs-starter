@@ -1,15 +1,55 @@
-<section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center p-6">
-    <h1 class="text-5xl font-medium mb-6 text-blue-700">{{ i18n "hero_title" | default "Feels like your business is drowning in chaos?" }}</h1>
-    <p class="text-xl mb-8 max-w-2xl">{{ i18n "hero_subtitle" | default "We transform your business chaos into order. What if you could streamline your operations?" }}</p>
-    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-      <a href="{{ "/docs/" | relLangURL }}" 
-        class="px-6 py-3 border-2 border-blue-700 text-blue-700 rounded-lg hover:bg-blue-800 hover:text-white transition-all duration-300" aria-label="View documentation">
-        {{ i18n "view_docs" | default "View Docs" }}
-      </a>
-       <a href="#contact" class="px-6 py-3 bg-orange-700 text-white rounded-lg hover:bg-orange-700 transition-all pulse" aria-label="Get started, contact us">
-        {{ i18n "get_started" | default "Let's talk about the chaos" }}
-      </a>
+<section id="hero" class="py-24 px-6 text-center flex flex-col items-center min-h-[80vh]">
+  <!-- Title and Subtitle Centered -->
+  <div class="max-w-2xl">
+    <h1 class="text-5xl font-medium mb-6 text-blue-500">
+      {{ i18n "hero_title" | default "Feels like your business is drowning in chaos?" }}
+    </h1>
+    <p class="text-xl mb-8">
+      {{ i18n "hero_subtitle" | default "We transform your business chaos into order. What if you could streamline your operations?" }}
+    </p>
+  </div>
+
+  <!-- Video Thumbnail and Play Behavior -->
+  <div x-data="{ playing: false }" class="w-full max-w-2xl mb-8 rounded-xl overflow-hidden shadow-lg bg-gray-100">
+    <div class="aspect-w-16 aspect-h-9 relative">
+      
+      <template x-if="!playing">
+        <button @click="playing = true" class="absolute inset-0 w-full h-full focus:outline-none">
+          <img src="https://plus.unsplash.com/premium_photo-1682431791187-8e434e3ac014?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+               alt="Video thumbnail"
+               class="w-full h-full object-cover">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="bg-white p-4 rounded-full shadow-lg hover:scale-110 transform transition">
+              <svg class="w-10 h-10 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </button>
+      </template>
+
+      <template x-if="playing">
+        <iframe class="absolute inset-0 w-full h-full rounded-xl"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+                frameborder="0"
+                allowfullscreen
+                allow="autoplay"></iframe>
+      </template>
+
     </div>
+  </div>
+
+  <!-- Your Original Buttons -->
+  <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+    <a href="{{ "/docs/" | relLangURL }}"
+       class="px-6 py-3 border-2 border-blue-700 text-blue-700 rounded-lg hover:bg-blue-800 hover:text-white transition-all duration-300" aria-label="View documentation">
+      {{ i18n "view_docs" | default "View Docs" }}
+    </a>
+    <a href="#contact"
+       class="px-6 py-3 bg-orange-700 text-white rounded-lg hover:bg-orange-800 transition-all pulse" aria-label="Get started, contact us">
+      {{ i18n "get_started" | default "Let's talk about the chaos" }}
+    </a>
+  </div>
 </section>
 
 <section id="solutions" class="pt-24 pb-24 px-6" x-data="carousel()" x-init="init()">
