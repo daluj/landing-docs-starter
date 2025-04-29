@@ -15,9 +15,7 @@
       
       <template x-if="!playing">
         <button @click="playing = true" class="absolute inset-0 w-full h-full focus:outline-none">
-          <img src="https://plus.unsplash.com/premium_photo-1682431791187-8e434e3ac014?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-               alt="Video thumbnail"
-               class="w-full h-full object-cover">
+          <img src="/images/thumbnail.jpg" loading="lazy" width="1920" height="1080" alt="Video thumbnail" class="w-full h-full object-cover">
           <div class="absolute inset-0 flex items-center justify-center">
             <div class="bg-white p-4 rounded-full shadow-lg hover:scale-110 transform transition">
               <svg class="w-10 h-10 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
@@ -29,11 +27,15 @@
       </template>
 
       <template x-if="playing">
-        <iframe class="absolute inset-0 w-full h-full rounded-xl"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-                frameborder="0"
-                allowfullscreen
-                allow="autoplay"></iframe>
+        <div x-transition.opacity.duration.700ms class="absolute inset-0 w-full h-full rounded-xl">
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+            frameborder="0"
+            allowfullscreen
+            allow="autoplay"
+            class="w-full h-full rounded-xl">
+          </iframe>
+        </div>
       </template>
 
     </div>
