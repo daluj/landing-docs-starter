@@ -9,3 +9,6 @@ resources/
 # Python Virtual Environment
 venv/
 .venv/
+
+.devbox/
+devbox.lock
