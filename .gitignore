@@ -8,3 +8,7 @@ resources/
 
 # Editor
 .vscode/
+
+# Python Virtual Environment
+venv/
+.venv/
