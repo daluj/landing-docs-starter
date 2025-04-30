@@ -15,7 +15,12 @@
       
       <template x-if="!playing">
         <button @click="playing = true" class="absolute inset-0 w-full h-full focus:outline-none">
-          <img src="/images/thumbnail.jpg" loading="lazy" width="1920" height="1080" alt="Video thumbnail" class="w-full h-full object-cover">
+          {{ partial "image-optimized.html" (dict 
+    "src" "images/thumbnail.jpg"
+    "alt" "Test"
+    "isLCP" true
+    "class" "thumbnail"
+  ) }}
           <div class="absolute inset-0 flex items-center justify-center">
             <div class="bg-white p-4 rounded-full shadow-lg hover:scale-110 transform transition">
               <svg class="w-10 h-10 text-orange-500" fill="currentColor" viewBox="0 0 24 24">

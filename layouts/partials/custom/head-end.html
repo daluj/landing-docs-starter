@@ -15,3 +15,7 @@
 {{ partial "alpine.html" . }}
 {{/*{{ partial "plausible_head.html" . }}*/}}
 {{/* /JS */}}
+
+{{ with .Page.Scratch.Get "preloadImage" }}
+    {{ . | safeHTML }}
+{{ end }}
