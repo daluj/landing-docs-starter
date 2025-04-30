@@ -6,9 +6,6 @@ public/
 resources/
 .hugo_build.lock
 
-# Editor
-.vscode/
-
 # Python Virtual Environment
 venv/
 .venv/

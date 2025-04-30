@@ -8,16 +8,6 @@
     "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/devcontainers/features/python:1": {}
   },
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "mhutchie.git-graph",
-        "esbenp.prettier-vscode",
-        "tamasfe.even-better-toml",
-        "budparr.language-hugo-vscode"
-      ]
-    }
-  },
   "postCreateCommand": "python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt",
   "forwardPorts": [1313]
 }
