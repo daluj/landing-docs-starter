@@ -5,8 +5,10 @@
       "extended": true,
       "version": "0.145.0"
     },
-    "ghcr.io/devcontainers/features/node:1": {}
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/python:1": {}
   },
+  "postCreateCommand": "if [ -f requirements.txt ]; then pip install -r requirements.txt; fi",
   "customizations": {
     "vscode": {
       "extensions": [
