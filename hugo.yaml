@@ -1,5 +1,6 @@
 # Configuration
 baseURL: "http://localhost:1313/"
+title: "My Site"
 timeout: "2m"
 enableRobotsTXT: true
 enableGitInfo: true
@@ -25,6 +26,7 @@ module:
     min: "0.145.0"
   imports:
     - path: github.com/imfing/hextra
+    - path: github.com/divinerites/plausible-hugo
   mounts:
     - source: "assets"
       target: "assets"
@@ -98,3 +100,7 @@ params:
   blog:
     list:
       displayTags: true
+  
+#  plausible:
+#    enable: true
+#    domain: yourdomain.com  # Replace with your actual domain
