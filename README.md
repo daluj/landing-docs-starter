@@ -1,45 +1,121 @@
-# Docs
+# Landing Docs Starter
 
-## Quick Start
+This project is a Hugo-based starter template for creating landing pages and documentation sites. It is designed to be lightweight, fast, and easy to customize, leveraging modern web technologies like TailwindCSS and PostCSS.
 
-Pre-requisites: [Hugo](https://gohugo.io/installation/), [Go](https://golang.org/doc/install), [Git](https://git-scm.com) and [Node](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+## Project Structure
 
-Launch the live server:
+The project is organized as follows:
 
-```shell
-hugo serve
+```
+.
+├── assets/         # Contains CSS, JavaScript, and other static assets
+├── bin/            # Contains the Hugo binary
+├── content/        # Markdown content for the site (e.g., blog posts, docs)
+├── layouts/        # Hugo templates for rendering the site
+├── public/         # Generated static files (output directory)
+├── resources/      # Hugo-generated resources (e.g., minified CSS/JS)
+├── static/         # Static files served as-is (e.g., images, fonts)
+├── devbox.json     # Development environment configuration
+├── go.mod          # Go module dependencies
+├── hugo.yaml       # Hugo configuration file
+├── package.json    # Node.js dependencies for TailwindCSS/PostCSS
+└── README.md       # Project documentation
 ```
 
+## Features
 
-### Update theme
+- **Markdown Support**: Write content in Markdown for blogs and documentation.
+- **TailwindCSS**: Customizable styling with utility-first CSS.
+- **Multilingual Support**: Easily add translations for your site.
+- **Search Integration**: Powered by FlexSearch for fast and flexible search.
+- **Customizable Themes**: Toggle between light, dark, and system themes.
+- **SEO Optimized**: Includes robots.txt and other SEO-friendly features.
 
-```shell
-hugo mod get -u
-hugo mod tidy
+## Prerequisites
+
+Before running the project, ensure you have the following installed:
+
+- [Hugo](https://gohugo.io/) (extended version, minimum version `0.145.0`)
+- [Node.js](https://nodejs.org/) (for TailwindCSS and PostCSS)
+- [Go](https://golang.org/) (for managing Hugo modules)
+
+## Installation
+
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/your-username/your-repo.git
+   cd your-repo
+   ```
+
+2. Install Node.js dependencies:
+
+   ```sh
+   npm install
+   ```
+
+3. Install Hugo modules:
+
+   ```sh
+   hugo mod get
+   ```
+
+## Development
+
+To start a local development server, run:
+
+```sh
+hugo server
 ```
 
-See [Update modules](https://gohugo.io/hugo-modules/use-modules/#update-modules) for more details.
+This will start the server at `http://localhost:1313/`. Changes to content or templates will automatically reload the site.
 
-### CSS Notes
+## Production
 
-**TL;DR; prefix all your colour-related tailwind classes with `hx-`.**
+To run the project in production mode, use the following command:
 
-The theme has a light-dark toggle, which is some custom javascript to tell all the theme's colour classes to switch to the dark.
+```sh
+hugo server --environment production
+```
 
-Because I've also added raw tailwind to do custom tailwind stuff, it means that these classes don't get updated.
-
-The net result is if you have a system preference of "dark", then set the manual toggle to "light", then the normal tailwind colours will be inverted.
-
-The simplest workaround for now is to just prefix all tailwind colour classes with `hx-` which will then use the themes classes (which do work).
-
-If you're wanting to use colours that don't exist in the theme, then you might have to add some javascript.
+This will start the server in production mode, applying production-specific configurations (e.g., minified CSS/JS).
 
 ## Deployment
 
-The website is hosted by [Netlify](https://app.netlify.com/sites/helixml-docs/deploys).
+To generate the static files for deployment, run:
 
-## Other Notes
+```sh
+hugo --environment production
+```
 
-### Base Template
+The generated files will be available in the `public/` directory. You can deploy this directory to any static hosting provider, such as:
 
-This website is based upon [Hextra](https://github.com/imfing/hextra).
+- [Netlify](https://www.netlify.com/)
+- [Vercel](https://vercel.com/)
+- [GitHub Pages](https://pages.github.com/)
+
+## Configuration
+
+The main configuration file is `hugo.yaml`. Key settings include:
+
+- **Base URL**: Set the `baseURL` to your site's domain.
+- **Languages**: Configure multilingual support under the `languages` section.
+- **Search**: Enable or disable search functionality under the `search` section.
+
+## Customization
+
+### TailwindCSS
+
+The TailwindCSS configuration is located in `assets/css/tailwind.config.js`. You can extend or modify the theme as needed.
+
+### PostCSS
+
+The PostCSS configuration is located in `assets/css/postcss.config.js`. It includes plugins for importing CSS, nesting, and TailwindCSS.
+
+### Templates
+
+Hugo templates are located in the `layouts/` directory. You can customize the layout and structure of your site by modifying these files.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request if you have suggestions or improvements.
