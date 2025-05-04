@@ -13,3 +13,7 @@ venv/
 
 .devbox/
 devbox.lock
+
+agent-ui/
+tmp/
+__pycache__/
