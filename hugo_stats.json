@@ -4,6 +4,7 @@
       "a",
       "article",
       "aside",
+      "audio",
       "blockquote",
       "body",
       "br",
@@ -726,6 +727,7 @@
       "z-20"
     ],
     "ids": [
+      "add-audio",
       "add-hextra-theme-as-a-git-submodule",
       "add-images",
       "backToTop",

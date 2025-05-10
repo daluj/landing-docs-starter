@@ -185,3 +185,10 @@ Note that the image path begins with a slash `/` and is relative to the static d
 ```
 
 [page-bundles]: https://gohugo.io/content-management/page-bundles/#leaf-bundles
+
+## Add Audio
+
+<audio controls>
+  <source src="/path-to-your-audio-file.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
