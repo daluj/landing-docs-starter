@@ -19,6 +19,10 @@ languages:
     languageName: English
     weight: 1
     title: Docs
+  es:
+    languageName: Español
+    weight: 2
+    title: Documentacion
 
 module:
   hugoVersion:
