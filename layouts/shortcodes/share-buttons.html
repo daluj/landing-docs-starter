@@ -1,4 +1,9 @@
-<div class="mt-4 flex gap-2 my-4">
+<div class="text-sm text-gray-700 mt-4">
+  <p>
+    Found this helpful? Others might too. Sharing this could be the nudge someone needs today.
+  </p>
+</div>
+<div class="mt-2 flex gap-2 my-4">
     {{- range .Page.Params.share_platforms -}}
       {{- $icon := index $.Site.Data.icons .icon -}}
       {{- if $icon -}}
